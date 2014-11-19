@@ -32,12 +32,14 @@ import java.awt.BorderLayout;
 import java.awt.SystemColor;
 import java.awt.CardLayout;
 import java.awt.event.MouseAdapter;
+import javax.swing.Box;
+import javax.swing.UIManager;
 
 public class InitGUI extends JFrame {
 
 	private JPanel contentPane;
 	private Component frame;
-	private String hierbaDir = "Images/hierba-footer.png";
+	private final static String IMG = "Images/";
 	private JLabel lblNewLabel_4;
 	private String sel;
 	private JButton btnOpenDialog;
@@ -77,7 +79,7 @@ public class InitGUI extends JFrame {
 	 */
 	public InitGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 390, 400);
+		setBounds(100, 100, 495, 446);
 		setTitle("Garden care");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -91,17 +93,24 @@ public class InitGUI extends JFrame {
 		contentPane.add(toolBar);
 
 		JLabel lblPerfectSun = new JLabel("Perfect sun");
+		lblPerfectSun.setBackground(UIManager.getColor("Button.background"));
 		lblPerfectSun.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				cl_panel.show(panel, "panel1");
 			}
 		});
+		
+		Component horizontalGlue = Box.createHorizontalGlue();
+		toolBar.add(horizontalGlue);
 		lblPerfectSun.setIconTextGap(3);
 		lblPerfectSun.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		lblPerfectSun.setIcon(new ImageIcon(InitGUI.class
 				.getResource("/Images/Sunshine@Low.png")));
 		toolBar.add(lblPerfectSun);
+		
+		Component horizontalGlue_1 = Box.createHorizontalGlue();
+		toolBar.add(horizontalGlue_1);
 		// toolBar.add(new JSeparator (SwingConstants.VERTICAL));
 		toolBar.addSeparator();
 
@@ -113,13 +122,22 @@ public class InitGUI extends JFrame {
 
 			}
 		});
+		
+		Component horizontalGlue_2 = Box.createHorizontalGlue();
+		toolBar.add(horizontalGlue_2);
 		lblCloudy.setIconTextGap(3);
 		lblCloudy.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		lblCloudy.setIcon(new ImageIcon(InitGUI.class
 				.getResource("/Images/Cloudy@Low.png")));
 		toolBar.add(lblCloudy);
+		
+		Component horizontalGlue_3 = Box.createHorizontalGlue();
+		toolBar.add(horizontalGlue_3);
 		// toolBar.add(new JSeparator (SwingConstants.VERTICAL));
 		toolBar.addSeparator();
+		
+		Component horizontalGlue_4 = Box.createHorizontalGlue();
+		toolBar.add(horizontalGlue_4);
 
 		JLabel lblRain = new JLabel("Rains");
 		lblRain.setIconTextGap(3);
@@ -127,6 +145,9 @@ public class InitGUI extends JFrame {
 		lblRain.setIcon(new ImageIcon(InitGUI.class
 				.getResource("/Images/Cloud-Download@Low.png")));
 		toolBar.add(lblRain);
+		
+		Component horizontalGlue_7 = Box.createHorizontalGlue();
+		toolBar.add(horizontalGlue_7);
 		toolBar.addSeparator();
 
 		JLabel lblWind = new JLabel("Windy");
@@ -136,10 +157,16 @@ public class InitGUI extends JFrame {
 				cl_panel.show(panel, "panel3");
 			}
 		});
+		
+		Component horizontalGlue_5 = Box.createHorizontalGlue();
+		toolBar.add(horizontalGlue_5);
 		lblWind.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		lblWind.setIcon(new ImageIcon(InitGUI.class
 				.getResource("/Images/Refresh@Low.png")));
 		toolBar.add(lblWind);
+		
+		Component horizontalGlue_6 = Box.createHorizontalGlue();
+		toolBar.add(horizontalGlue_6);
 
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
@@ -234,7 +261,7 @@ public class InitGUI extends JFrame {
 		});
 
 		/**
-		 * New panel whit a card layout, which contains another 4 panels in
+		 * New panel with a card layout, which contains another 4 panels in
 		 * order to use 4 different images.
 		 */
 		panel = new JPanel();
@@ -245,13 +272,13 @@ public class InitGUI extends JFrame {
 		/**
 		 * For each new panel, we call our drawing panel.
 		 */
-		JPanel panel_4 = new ImgPanel(hierbaDir);
+		JPanel panel_4 = new ImgPanel(IMG + "hierba-footer.png");
 		panel.add(panel_4, "panel1");
 
-		JPanel panel_5 = new ImgPanel("Images/hierba-Cloudy.png");
+		JPanel panel_5 = new ImgPanel(IMG + "hierba-Cloudy.png");
 		panel.add(panel_5, "panel2");
 
-		JPanel panel_6 = new ImgPanel("Images/hierba-Wind.png");
+		JPanel panel_6 = new ImgPanel(IMG + "hierba-Wind.png");
 		panel.add(panel_6, "panel3");
 
 		cl_panel.show(panel, "panel1");
