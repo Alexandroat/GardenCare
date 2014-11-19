@@ -140,6 +140,12 @@ public class InitGUI extends JFrame {
 		toolBar.add(horizontalGlue_4);
 
 		JLabel lblRain = new JLabel("Rains");
+		lblRain.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				cl_panel.show(panel, "panel4");
+			}
+		});
 		lblRain.setIconTextGap(3);
 		lblRain.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		lblRain.setIcon(new ImageIcon(InitGUI.class
@@ -278,8 +284,11 @@ public class InitGUI extends JFrame {
 		JPanel panel_5 = new ImgPanel(IMG + "hierba-Cloudy.png");
 		panel.add(panel_5, "panel2");
 
-		JPanel panel_6 = new ImgPanel(IMG + "hierba-Wind.png");
+		JPanel panel_6 = new ImgPanel(IMG + "hierba-wind.png");
 		panel.add(panel_6, "panel3");
+		
+		JPanel panel_7 = new ImgPanel(IMG + "hierba-rain.png");
+		panel.add(panel_7, "panel4");
 
 		cl_panel.show(panel, "panel1");
 
