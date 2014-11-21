@@ -43,8 +43,8 @@ public class InitGUI extends JFrame {
 	private JLabel lblNewLabel_4;
 	private String sel;
 	private JButton btnOpenDialog;
-	private CardLayout cl_panel;
-	private JPanel panel;
+	private CardLayout cl_panel_3;
+	private JPanel panel_3;
 
 	/**
 	 * Launch the application.
@@ -97,10 +97,13 @@ public class InitGUI extends JFrame {
 		lblPerfectSun.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				cl_panel.show(panel, "panel1");
+				/**
+				 * Displays the panel3_1
+				 */
+				cl_panel_3.show(panel_3, "panel1");
 			}
 		});
-		
+
 		Component horizontalGlue = Box.createHorizontalGlue();
 		toolBar.add(horizontalGlue);
 		lblPerfectSun.setIconTextGap(3);
@@ -108,7 +111,7 @@ public class InitGUI extends JFrame {
 		lblPerfectSun.setIcon(new ImageIcon(InitGUI.class
 				.getResource("/Images/Sunshine@Low.png")));
 		toolBar.add(lblPerfectSun);
-		
+
 		Component horizontalGlue_1 = Box.createHorizontalGlue();
 		toolBar.add(horizontalGlue_1);
 		// toolBar.add(new JSeparator (SwingConstants.VERTICAL));
@@ -118,11 +121,14 @@ public class InitGUI extends JFrame {
 		lblCloudy.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				cl_panel.show(panel, "panel2");
+				/**
+				 * Displays the panel3_2
+				 */
+				cl_panel_3.show(panel_3, "panel2");
 
 			}
 		});
-		
+
 		Component horizontalGlue_2 = Box.createHorizontalGlue();
 		toolBar.add(horizontalGlue_2);
 		lblCloudy.setIconTextGap(3);
@@ -130,12 +136,12 @@ public class InitGUI extends JFrame {
 		lblCloudy.setIcon(new ImageIcon(InitGUI.class
 				.getResource("/Images/Cloudy@Low.png")));
 		toolBar.add(lblCloudy);
-		
+
 		Component horizontalGlue_3 = Box.createHorizontalGlue();
 		toolBar.add(horizontalGlue_3);
 		// toolBar.add(new JSeparator (SwingConstants.VERTICAL));
 		toolBar.addSeparator();
-		
+
 		Component horizontalGlue_4 = Box.createHorizontalGlue();
 		toolBar.add(horizontalGlue_4);
 
@@ -143,7 +149,10 @@ public class InitGUI extends JFrame {
 		lblRain.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				cl_panel.show(panel, "panel4");
+				/**
+				 * Displays the panel3_3
+				 */
+				cl_panel_3.show(panel_3, "panel4");
 			}
 		});
 		lblRain.setIconTextGap(3);
@@ -151,7 +160,7 @@ public class InitGUI extends JFrame {
 		lblRain.setIcon(new ImageIcon(InitGUI.class
 				.getResource("/Images/Cloud-Download@Low.png")));
 		toolBar.add(lblRain);
-		
+
 		Component horizontalGlue_7 = Box.createHorizontalGlue();
 		toolBar.add(horizontalGlue_7);
 		toolBar.addSeparator();
@@ -160,17 +169,20 @@ public class InitGUI extends JFrame {
 		lblWind.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				cl_panel.show(panel, "panel3");
+				/**
+				 * Displays the panel3_4
+				 */
+				cl_panel_3.show(panel_3, "panel3");
 			}
 		});
-		
+
 		Component horizontalGlue_5 = Box.createHorizontalGlue();
 		toolBar.add(horizontalGlue_5);
 		lblWind.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		lblWind.setIcon(new ImageIcon(InitGUI.class
 				.getResource("/Images/Refresh@Low.png")));
 		toolBar.add(lblWind);
-		
+
 		Component horizontalGlue_6 = Box.createHorizontalGlue();
 		toolBar.add(horizontalGlue_6);
 
@@ -178,9 +190,9 @@ public class InitGUI extends JFrame {
 		contentPane.add(panel_2);
 		panel_2.setLayout(new BoxLayout(panel_2, BoxLayout.X_AXIS));
 
-		JPanel panel_3 = new JPanel();
-		panel_2.add(panel_3);
-		panel_3.setLayout(new GridLayout(1, 0, 0, 0));
+		JPanel panel_2_1 = new JPanel();
+		panel_2.add(panel_2_1);
+		panel_2_1.setLayout(new GridLayout(1, 0, 0, 0));
 
 		/**
 		 * Defining JList and its model for supplying content
@@ -189,7 +201,7 @@ public class InitGUI extends JFrame {
 		ListModel jList1Model = new DefaultComboBoxModel(new String[] {
 				"Water", "Petrol", "Milk" });
 		final JList list = new JList();
-		panel_3.add(list);
+		panel_2_1.add(list);
 		list.setFont(new Font("Courier New", Font.PLAIN, 14));
 		list.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null,
 				null));
@@ -270,27 +282,29 @@ public class InitGUI extends JFrame {
 		 * New panel with a card layout, which contains another 4 panels in
 		 * order to use 4 different images.
 		 */
-		panel = new JPanel();
-		contentPane.add(panel);
-		cl_panel = new CardLayout(0, 0);
-		panel.setLayout(cl_panel);
+		panel_3 = new JPanel();
+		contentPane.add(panel_3);
+		cl_panel_3 = new CardLayout(0, 0);
+		panel_3.setLayout(cl_panel_3);
 
 		/**
 		 * For each new panel, we call our drawing panel.
 		 */
-		JPanel panel_4 = new ImgPanel(IMG + "hierba-footer.png");
-		panel.add(panel_4, "panel1");
+		JPanel panel_3_1 = new ImgPanel(IMG + "hierba-footer.png");
+		panel_3.add(panel_3_1, "panel1");
 
-		JPanel panel_5 = new ImgPanel(IMG + "hierba-Cloudy.png");
-		panel.add(panel_5, "panel2");
+		JPanel panel_3_2 = new ImgPanel(IMG + "hierba-Cloudy.png");
+		panel_3.add(panel_3_2, "panel2");
 
-		JPanel panel_6 = new ImgPanel(IMG + "hierba-wind.png");
-		panel.add(panel_6, "panel3");
-		
-		JPanel panel_7 = new ImgPanel(IMG + "hierba-rain.png");
-		panel.add(panel_7, "panel4");
+		JPanel panel_3_3 = new ImgPanel(IMG + "hierba-wind.png");
+		panel_3.add(panel_3_3, "panel3");
 
-		cl_panel.show(panel, "panel1");
+		JPanel panel_3_4 = new ImgPanel(IMG + "hierba-rain.png");
+		panel_3.add(panel_3_4, "panel4");
+		/**
+		 * Panel displayed by default
+		 */
+		cl_panel_3.show(panel_3, "panel1");
 
 	}
 }
