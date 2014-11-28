@@ -34,7 +34,11 @@ import java.awt.CardLayout;
 import java.awt.event.MouseAdapter;
 import javax.swing.Box;
 import javax.swing.UIManager;
-
+/**
+ * 
+ * @author Alejandro
+ *
+ */
 public class InitGUI extends JFrame {
 
 	private JPanel contentPane;
